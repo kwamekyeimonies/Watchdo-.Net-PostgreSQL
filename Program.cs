@@ -1,7 +1,9 @@
 using WatchDog;
-
+using WatchDog.src.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 
@@ -13,7 +15,7 @@ builder.Services.AddWatchDogServices(
     {
         opt.IsAutoClear = false;
         opt.SetExternalDbConnString = builder.Configuration.GetConnectionString("PostgreSQL_Connection");
-        opt.SqlDriverOption = WatchDogSqlDriverEnum.PostgreSql;
+        opt.DbDriverOption = WatchDog.src.Enums.WatchDogDbDriverEnum.PostgreSql;
     }
 );
 
